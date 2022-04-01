@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update</title>
+    <style>
+        img{
+            max-width: 150px;
+            min-width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h3>Update</h3>
+    </div>
+    <div id="main">
+        <div id="main_form">
+            <form action="/employees/update/{{employee.get_email()}}" method="post" enctype="multipart/form-data">
+                <p>
+                    <label for="firstName">Firstname: </label>
+                    <input type="text" name="firstName" id="firstName" value="{{employee.get_firstName()}}">
+                </p>
+                <p>
+                    <label for="lastName">Lastname: </label>
+                    <input type="text" name="lastName" id="lastName" value="{{employee.get_lastName()}}">
+                </p>
+                <p>
+                    <label for="order">Order: </label>
+                    <input type="number" name="order" id="order" value="{{employee.get_order()}}">
+                </p>
+                <p>
+                    <label for="linkedIn">LinkedIn: </label>
+                    <input type="text" name="linkedIn" id="linkedIn" value="{{employee.get_linkedIn()}}">
+                </p>
+                <p>
+                    <label for="xing">Xing: </label>
+                    <input type="text" name="xing" id="xing" value="{{employee.get_xing()}}">
+                </p>
+                <p>
+                    <label for="role">Role: </label>
+                    <input type="text" name="role" id="role" value="{{employee.get_role()}}">
+                </p>
+                <p>
+                    <label for="photoUrl">Photo: </label>
+                    <input type="file" name="photoUrl" id="photoUrl" value="{{employee.get_pohotUrl()}}">
+                    <img src="{{employee.get_pohotUrl()}}" alt="Greska">
+                </p>
+                <p>
+                    <input type="submit" value="Update">
+                </p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
